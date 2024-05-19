@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Hazardous Waste Systems</h1>
+  <ul>
+    {% for system in hazardouswastesystems %}
+      <li>
+        <h2>{{ system.name }}</h2>
+        <p>{{ system.description }}</p>
+        <p>Electronic Manifest: {{ system.electronic_manifest }}</p>
+        <p>Data Plus Image Manifest: {{ system.data_plus_image_manifest }}</p>
+      </li>
+    {% empty %}
+      <li>No hazardous waste systems available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
