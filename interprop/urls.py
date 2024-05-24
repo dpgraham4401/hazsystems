@@ -20,6 +20,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("esystem.urls")),
-    path("", include("core.urls"))
+    path("", include(("esystem.urls", "esystem"), namespace="esystem")),
+    path("", include(("core.urls", "core"), namespace="core")),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]

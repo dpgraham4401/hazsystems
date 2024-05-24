@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Hazardous Waste Third Parties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 <header>
     <h1>TrackYourWaste.com</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'core:index' %}">Home</a></li>
+            <li><a href="{% url 'esystem:system_list' %}">Hazardous Waste Systems</a></li>
+        </ul>
+    </nav>
 </header>
-
+<body>
 {% block content %}
     <!-- This is where child templates will insert their content -->
 {% endblock %}

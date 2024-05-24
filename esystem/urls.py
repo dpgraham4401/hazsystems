@@ -5,6 +5,6 @@ from esystem.views import HazardousWasteSystemListView
 
 urlpatterns = [
     path("system/", include([
-        path("", HazardousWasteSystemListView.as_view()),
+        path("", HazardousWasteSystemListView.as_view(), name="system_list"),
     ]))
 ]
