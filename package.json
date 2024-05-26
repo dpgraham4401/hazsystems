@@ -1,0 +1,17 @@
+{
+  "name": "hazsystems",
+  "version": "0.0.1",
+  "description": "practice django application that acts a directory of hazardous waste tracking systems",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "author": "David Graham",
+  "license": "MIT",
+  "dependencies": {
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
+  }
+}

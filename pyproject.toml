@@ -1,0 +1,26 @@
+[project]
+name = "hazsystems"
+version = "0.0.1"
+description = "A practice django application."
+readme = "README.md"
+authors = [
+    { name = "David Graham", email = "dpgraham4401@gmail.com" },
+]
+maintainers = [
+    { name = "David Graham", email = "dpgraham4401@gmail.com" },
+]
+classifiers = [
+    "Framework :: Django",
+    "Programming Language :: Python :: 3",
+]
+
+license = { text = "MIT" }
+requires-python = ">=3.12"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "Q", "I001"]
+ignore = ["F401"]
+exclude = ["**/migrations/*.py"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "haztrak.settings.test"

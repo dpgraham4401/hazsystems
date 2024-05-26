@@ -1,9 +1,11 @@
+{% load django_vite %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Hazardous Waste Third Parties</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {% vite_hmr_client %}
+    {%  vite_asset 'js/hello.js' %}
 </head>
 <header>
     <h1>TrackYourWaste.com</h1>

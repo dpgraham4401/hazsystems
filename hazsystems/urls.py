@@ -1,5 +1,5 @@
 """
-URL configuration for interprop project.
+URL configuration for hazsystems project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -14,12 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("", include(("esystem.urls", "esystem"), namespace="esystem")),
     path("", include(("core.urls", "core"), namespace="core")),
     path("__debug__/", include("debug_toolbar.urls")),

@@ -6,6 +6,6 @@ from esystem.models import HazardousWasteSystem
 
 class HazardousWasteSystemListView(ListView):
     model = HazardousWasteSystem
-    template_name = 'esystem/hazardouswastesystem_list.html'
-    context_object_name = 'hazardouswastesystems'
+    template_name = "esystem/hazardouswastesystem_list.html"
+    context_object_name = "hazardouswastesystems"
     paginate_by = 10
