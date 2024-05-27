@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,4 +138,10 @@ STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-DJANGO_VITE = {"default": {"dev_mode": DEBUG, "dev_server_port": 3000}}
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": DEBUG,
+        "dev_server_port": os.getenv("DJANGO_VITE_DEV_SERVER_PORT", 3000),
+        "dev_server_host": os.getenv("DJANGO_VITE_DEV_SERVER_HOST", "http://localhost"),
+    }
+}

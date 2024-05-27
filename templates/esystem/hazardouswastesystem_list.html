@@ -1,17 +1,44 @@
 {% extends "base.html" %}
+{% load django_vite %}
+
+{% block head %}
+    <head>
+    {{ block.super }}
+        <title>Hazardous Waste Systems</title>
+    </head>
+{% endblock %}
 
 {% block content %}
-  <h1>Hazardous Waste Systems</h1>
-  <ul>
-    {% for system in hazardouswastesystems %}
-      <li>
-        <h2>{{ system.name }}</h2>
-        <p>{{ system.description }}</p>
-        <p>Electronic Manifest: {{ system.electronic_manifest }}</p>
-        <p>Data Plus Image Manifest: {{ system.data_plus_image_manifest }}</p>
-      </li>
-    {% empty %}
-      <li>No hazardous waste systems available.</li>
-    {% endfor %}
-  </ul>
+    <div class="mx-5 my-2">
+    <h2 class="h3">Available Hazardous Waste Systems</h2>
+    <p>This is a list of applications that can be used to track hazardous waste</p>
+    <div class="mx-3">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-primary" onclick="sayHello()">Add New System</button>
+    </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Electronic Manifest</th>
+              <th scope="col">Data Plus Image Manifest</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for system in hazardouswastesystems %}
+            <tr>
+              <td>{{ system.name }}</td>
+              <td>{{ system.electronic_manifest }}</td>
+              <td>{{ system.data_plus_image_manifest }}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="4">No systems found.</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    </div>
+    {% vite_asset 'js/hello.js' %}
 {% endblock %}
