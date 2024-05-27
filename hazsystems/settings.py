@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django_vite",
     "esystem.apps.EsystemConfig",
     "core.apps.CoreConfig",
+    "fontawesomefree",
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card px-3 pb-3 pt-1 rounded-3">
+                    <h1>{{ hazardouswastesystem.name }}</h1>
+                    <label class="fw-bold" for="system-description">Description</label>
+                    <p id="system-description">{{ hazardouswastesystem.description }}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="fw-bold" for="electronic-manifest">Can use electronic manifest?</label>
+                            {% if hazardouswastesystem.electronic_manifest %}
+                                <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                            {% else %}
+                                <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-6">
+                            <label class="fw-bold" for="electronic-manifest">Can submit paper as Data + Image?</label>
+                            {% if hazardouswastesystem.data_plus_image_manifest %}
+                                <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                            {% else %}
+                                <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

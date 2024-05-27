@@ -14,7 +14,7 @@
     <p>This is a list of applications that can be used to track hazardous waste</p>
     <div class="mx-3">
     <div class="d-flex justify-content-end">
-        <button class="btn btn-outline-primary" onclick="sayHello()">Add New System</button>
+        <a class="btn btn-outline-primary" href="{% url 'esystem:system_create' %}">Add New System</a>
     </div>
         <table class="table">
           <thead>
@@ -27,9 +27,23 @@
           <tbody>
           {% for system in hazardouswastesystems %}
             <tr>
-              <td>{{ system.name }}</td>
-              <td>{{ system.electronic_manifest }}</td>
-              <td>{{ system.data_plus_image_manifest }}</td>
+              <td><a href="{% url 'esystem:system_detail' pk=system.id %}">
+                  {{ system.name }}
+              </a></td>
+              <td>
+                {% if system.electronic_manifest %}
+                    <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                {% else %}
+                    <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                {% endif %}
+              </td>
+              <td>
+                {% if system.data_plus_image_manifest %}
+                    <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                {% else %}
+                    <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                {% endif %}
+              </td>
             </tr>
           {% empty %}
             <tr>
