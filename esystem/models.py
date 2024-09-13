@@ -16,9 +16,13 @@ class HazardousWasteSystem(models.Model):
     )
     electronic_manifest = models.BooleanField(
         default=False,
+        help_text="Does the system support electronic manifests?",
+        blank=True,
     )
     data_plus_image_manifest = models.BooleanField(
         default=False,
+        help_text="Does the system support data plus image manifests?",
+        blank=True,
     )
 
     class Meta:
