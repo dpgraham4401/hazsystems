@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
-    "esystem.apps.EsystemConfig",
-    "core.apps.CoreConfig",
+    "django_htmx",
     "fontawesomefree",
+    "core",
+    "esystem",
 ]
 
 MIDDLEWARE = [
