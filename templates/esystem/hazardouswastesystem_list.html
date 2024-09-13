@@ -1,58 +1,56 @@
 {% extends "base.html" %}
-{% load django_vite %}
 
 {% block head %}
     <head>
-    {{ block.super }}
+        {{ block.super }}
         <title>Hazardous Waste Systems</title>
     </head>
 {% endblock %}
 
 {% block content %}
     <div class="mx-5 my-2">
-    <h2 class="h3">Available Hazardous Waste Systems</h2>
-    <p>This is a list of applications that can be used to track hazardous waste</p>
-    <div class="mx-3">
-    <div class="d-flex justify-content-end">
-        <a class="btn btn-outline-primary" href="{% url 'esystem:system_create' %}">Add New System</a>
+        <h2 class="h3">Available Hazardous Waste Systems</h2>
+        <p>This is a list of applications that can be used to track hazardous waste</p>
+        <div class="mx-3">
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-outline-primary" href="{% url 'esystem:system_create' %}">Add New System</a>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Electronic Manifest</th>
+                    <th scope="col">Data Plus Image Manifest</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for system in hazardouswastesystems %}
+                    <tr>
+                        <td><a href="{% url 'esystem:system_detail' pk=system.id %}">
+                            {{ system.name }}
+                        </a></td>
+                        <td>
+                            {% if system.electronic_manifest %}
+                                <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                            {% else %}
+                                <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if system.data_plus_image_manifest %}
+                                <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
+                            {% else %}
+                                <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No systems found.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Electronic Manifest</th>
-              <th scope="col">Data Plus Image Manifest</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for system in hazardouswastesystems %}
-            <tr>
-              <td><a href="{% url 'esystem:system_detail' pk=system.id %}">
-                  {{ system.name }}
-              </a></td>
-              <td>
-                {% if system.electronic_manifest %}
-                    <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
-                {% else %}
-                    <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
-                {% endif %}
-              </td>
-              <td>
-                {% if system.data_plus_image_manifest %}
-                    <i id="electronic-manifest" aria-label="yes" class="text-success fa-solid fa-check"></i>
-                {% else %}
-                    <i id="electronic-manifest" aria-label="no" class="text-danger fa-solid fa-xmark"></i>
-                {% endif %}
-              </td>
-            </tr>
-          {% empty %}
-            <tr>
-              <td colspan="4">No systems found.</td>
-            </tr>
-          {% endfor %}
-          </tbody>
-        </table>
-    </div>
-    </div>
-    {% vite_asset 'js/hello.js' %}
 {% endblock %}

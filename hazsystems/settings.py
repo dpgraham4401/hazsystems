@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
-    "django_vite",
     "esystem.apps.EsystemConfig",
     "core.apps.CoreConfig",
     "fontawesomefree",
@@ -124,25 +123,11 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-# Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / "static" / "dist"
-
-# Name of static files folder (after called python manage.py collectstatic)
-STATIC_ROOT = BASE_DIR / "collectedstatic"
-
 # Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
 # when run command python manage.py collectstatic
-STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-DJANGO_VITE = {
-    "default": {
-        "dev_mode": DEBUG,
-        "dev_server_port": os.getenv("DJANGO_VITE_DEV_SERVER_PORT", 3000),
-        "dev_server_host": os.getenv("DJANGO_VITE_DEV_SERVER_HOST", "http://localhost"),
-    }
-}
