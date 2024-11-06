@@ -6,6 +6,7 @@ from waste.models import Waste
 
 # Create your views here.
 class WasteListView(ListView):
+    """View ALL the waste!"""
     model = Waste
     template_name = "waste/waste_list.html"
     context_object_name = "wastes"

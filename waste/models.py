@@ -15,3 +15,13 @@ class Waste(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class WasteTag(models.Model):
+    """A tag for a waste type"""
+
+    name = models.CharField(max_length=100)
+    waste = models.ForeignKey(Waste, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
