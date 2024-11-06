@@ -14,13 +14,10 @@ class HazardousWasteSystemForm(forms.ModelForm):
         )
     )
     electronic_manifest = forms.BooleanField(
-        required=False,
-        widget=forms.CheckboxInput(attrs={"class": "form-check-input"})
+        required=False, widget=forms.CheckboxInput(attrs={"class": "form-check-input"})
     )
     data_plus_image_manifest = forms.BooleanField(
-        required=False,
-        widget=forms.CheckboxInput(attrs={"class": "form-check-input"})
-
+        required=False, widget=forms.CheckboxInput(attrs={"class": "form-check-input"})
     )
 
     class Meta:

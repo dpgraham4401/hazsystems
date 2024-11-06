@@ -4,20 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('esystem', '0002_alter_hazardouswastesystem_name'),
+        ("esystem", "0002_alter_hazardouswastesystem_name"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='hazardouswastesystem',
-            name='data_plus_image_manifest',
-            field=models.BooleanField(blank=True, default=False, help_text='Does the system support data plus image manifests?'),
+            model_name="hazardouswastesystem",
+            name="data_plus_image_manifest",
+            field=models.BooleanField(
+                blank=True,
+                default=False,
+                help_text="Does the system support data plus image manifests?",
+            ),
         ),
         migrations.AlterField(
-            model_name='hazardouswastesystem',
-            name='electronic_manifest',
-            field=models.BooleanField(blank=True, default=False, help_text='Does the system support electronic manifests?'),
+            model_name="hazardouswastesystem",
+            name="electronic_manifest",
+            field=models.BooleanField(
+                blank=True,
+                default=False,
+                help_text="Does the system support electronic manifests?",
+            ),
         ),
     ]

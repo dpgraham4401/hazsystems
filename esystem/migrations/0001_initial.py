@@ -4,25 +4,31 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='HazardousWasteSystem',
+            name="HazardousWasteSystem",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('description', models.TextField(blank=True, null=True)),
-                ('electronic_manifest', models.BooleanField(default=False)),
-                ('data_plus_image_manifest', models.BooleanField(default=False)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("description", models.TextField(blank=True, null=True)),
+                ("electronic_manifest", models.BooleanField(default=False)),
+                ("data_plus_image_manifest", models.BooleanField(default=False)),
             ],
             options={
-                'verbose_name': 'Hazardous Waste System',
-                'verbose_name_plural': 'Hazardous Waste Systems',
+                "verbose_name": "Hazardous Waste System",
+                "verbose_name_plural": "Hazardous Waste Systems",
             },
         ),
     ]
