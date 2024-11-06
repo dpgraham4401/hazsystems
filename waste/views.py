@@ -9,4 +9,4 @@ class WasteListView(ListView):
     model = Waste
     template_name = "waste/waste_list.html"
     context_object_name = "wastes"
-    paginate_by = 3
+    paginate_by = 30
