@@ -18,6 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from ninja import NinjaAPI
+
+from waste.api import router as waste_router
+
+api = NinjaAPI()
+
+api.add_router("/waste/", waste_router)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,4 +32,5 @@ urlpatterns = [
     path("", include(("core.urls", "core"), namespace="core")),
     path("", include(("waste.urls", "waste"), namespace="waste")),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("api/", api.urls),
 ]
