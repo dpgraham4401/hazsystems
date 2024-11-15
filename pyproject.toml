@@ -34,7 +34,7 @@ dependencies = [
     "APScheduler==3.10.4",
     "django-apscheduler==0.7.0",
     "pydantic==2.9.2",
-    "whitenoise[brotli]==6.7.0",
+    "whitenoise[brotli]==6.8.2",
     "mozilla-django-oidc==4.0.1",
     "requests==2.32.2",
     "pandas[pyarrow]==2.2.3",
