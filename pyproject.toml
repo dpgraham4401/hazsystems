@@ -51,7 +51,7 @@ dependencies = [
     "django-csp==3.8",
     "django-maintenance-mode==0.21.1",
     "elasticsearch==7.13.4",
-    "django-htmx==1.19.0",
+    "django-htmx==1.21.0",
     "wagtail==6.2.2",
     "django-auditlog==3.0.0",
     "sentry-sdk[django]==2.17.0",
