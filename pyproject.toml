@@ -64,6 +64,14 @@ lint = [
     "ruff==0.7.1",
     "djhtml==3.0.7"
 ]
+test = [
+    "model-bakery==1.20.0",
+    "playwright==1.47.0",
+    "pytest==8.3.3",
+    "pytest-asyncio==0.24.0",
+    "pytest-base-url==2.1.0",
+    "pytest-django==4.9.0",
+]
 dev = [
     "django-debug-toolbar==4.4.6",
     "django-browser-reload==1.16.0",
