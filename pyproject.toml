@@ -36,7 +36,7 @@ dependencies = [
     "pydantic==2.9.2",
     "whitenoise[brotli]==6.7.0",
     "mozilla-django-oidc==4.0.1",
-    "requests==2.32.2",
+    "requests==2.32.3",
     "pandas[pyarrow]==2.2.3",
     "openpyxl==3.1.5",
     "django-filter==24.3",
