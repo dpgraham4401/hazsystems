@@ -11,4 +11,3 @@ updates:
       interval: "daily"
     reviewers:
       - "dpgraham4401"
-    open-pull-requests-limit: 2
