@@ -35,6 +35,7 @@ jobs:
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -55,8 +56,6 @@ jobs:
 
       - name: Build
         run: mkdocs build
-
-      - run: ls -la
 
       - name: Upload Docs
         uses: actions/upload-pages-artifact@v3
