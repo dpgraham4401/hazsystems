@@ -47,6 +47,8 @@ jobs:
       - name: Build
         run: mkdocs build
 
+      - run: ls -la
+
       - name: Upload Docs
         uses: actions/upload-pages-artifact@v3
         with:
