@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "fontawesomefree",
     "core",
     "esystem",
+    "waste",
 ]
 
 MIDDLEWARE = [

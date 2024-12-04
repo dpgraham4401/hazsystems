@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mx-5 my-2">
+        <h2 class="h3">Waste Types</h2>
+        <div class="mx-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for waste in wastes %}
+                    <tr>
+                        <td><a href="{% url 'esystem:system_detail' pk=waste.id %}">
+                            {{ waste.name}}
+                        </a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No waste information found.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

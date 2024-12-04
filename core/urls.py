@@ -4,7 +4,12 @@ from django.urls.conf import include
 from core.views import home_view
 
 urlpatterns = [
-    path("", include([
-        path("", home_view, name="index"),
-    ]))
+    path(
+        "",
+        include(
+            [
+                path("", home_view, name="index"),
+            ]
+        ),
+    )
 ]
