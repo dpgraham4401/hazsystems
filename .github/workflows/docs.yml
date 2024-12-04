@@ -10,14 +10,23 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+env:
+  DOCS_DIRECTORY: ./docs
 
 jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./docs
+        working-directory: ${{ env.DOCS_DIRECTORY }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -52,7 +61,7 @@ jobs:
       - name: Upload Docs
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: '${{ env.DOCS_DIRECTORY }}/site'
 
   deploy_pages:
     name: Deploy Documentation
