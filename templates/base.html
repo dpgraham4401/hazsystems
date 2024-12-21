@@ -36,11 +36,22 @@
                     <a class="nav-link" href="{% url 'waste:waste-list' %}">Wastes</a>
                 </div>
             </div>
+            <div>
+                <img class="rounded-circle"
+                     width="50"
+                     height="50"
+                     src="https://lh3.googleusercontent.com/a/ACg8ocLCd_gpf8C7tBBqmQJHddWrNLlR2c4MJY_r2V2vw1NSM3ZT4EZA=s96-"/>
+            </div>
         </div>
     </nav>
 </header>
 {% block content %}
     <!-- This is where child templates will insert their content -->
 {% endblock %}
+<script src="//accounts.google.com/gsi/client" async></script>
+<div id="g_id_onload"
+     data-client_id="746945417607-5jm65rpip493nc7b7aed3cb5f3dfkck2.apps.googleusercontent.com"
+     data-login_uri="{% url 'google_login_by_token' %}">
+</div>
 </body>
 </html>

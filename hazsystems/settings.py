@@ -121,6 +121,31 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "APP": {
+            "client_id": os.getenv(
+                "CLIENT_ID",
+                "746945417607-5jm65rpip493nc7b7aed3cb5f3dfkck2.apps.googleusercontent.com",
+            ),
+            "secret": os.getenv("CLIENT_SECRET"),
+            "key": "",
+            "settings": {
+                "scope": [
+                    "profile",
+                    "email",
+                ],
+                "auth_params": {
+                    "access_type": "online",
+                },
+            },
+        },
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
