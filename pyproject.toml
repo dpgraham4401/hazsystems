@@ -23,4 +23,5 @@ ignore = ["F401"]
 exclude = ["**/migrations/*.py"]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "haztrak.settings.test"
+DJANGO_SETTINGS_MODULE = "hazsystems.settings"
+addopts = "--strict-markers --create-db --migrations"
