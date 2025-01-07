@@ -33,4 +33,5 @@ urlpatterns = [
     path("", include(("waste.urls", "waste"), namespace="waste")),
     path("__debug__/", include("debug_toolbar.urls")),
     path("api/", api.urls),
+    path("accounts/", include("allauth.urls")),
 ]
