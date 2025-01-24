@@ -15,6 +15,9 @@ class TestDummyClass:
     def test_dummy(self, string):
         assert string == "hello"
 
+    def test_another_dummy(self, string):
+        assert string == "hello"
+
     def test_create_model(self):
         system = HazardousWasteSystem.objects.create(name="Test System")
         assert isinstance(system, HazardousWasteSystem)
