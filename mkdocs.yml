@@ -1,6 +1,6 @@
 site_name: Hazard Waste Systems
 site_description: Documentation for the HazSystems example application
-site_url: https://dpgraham4401.github.com/hazsystems
+site_url: !ENV READTHEDOCS_CANONICAL_URL
 repo_url: https://github.com/dpgraham4401/hazsystems
 edit_uri: /blob/main/docs/docs/
 plugins:
