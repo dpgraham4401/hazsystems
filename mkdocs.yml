@@ -8,3 +8,5 @@ plugins:
   - search:
 theme:
   name: material
+extra_javascript:
+    - javascript/readthedocs.js

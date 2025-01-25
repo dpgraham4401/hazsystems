@@ -1,3 +1,7 @@
+# HazSystems
+
+A dummy project I use to test ideas and tools.
+
 # Developing the documentation
 
 The documentation is written in Markdown and is built using [MkDocs](https://www.mkdocs.org/). 
