@@ -8,6 +8,8 @@ on:
     paths:
       - 'docs/**'
       - '.github/workflows/docs.yml'
+      - '.readthedocs.yaml'
+      - 'mkdocs.yml'
   workflow_dispatch:
 
 permissions:
@@ -19,15 +21,9 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-env:
-  DOCS_DIRECTORY: ./docs
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ env.DOCS_DIRECTORY }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -50,10 +46,10 @@ jobs:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
+            mkdocs-material-${{ env.cache_id }}
 
       - name: Install Dependencies
-        run: pip install mkdocs-material
+        run: pip install -r docs/requirements.txt
 
       - name: Build
         run: mkdocs build
